@@ -14,5 +14,9 @@ def receive_data():
     # 可根據需求處理 data
     return "Received"
 
+@app.route('/Demo', methods=['GET'])
+def demo():
+    return "Hello Agent!"
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000)
