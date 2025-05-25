@@ -1,3 +1,4 @@
+# filepath: c:\Duran\Projects\github-copilot-agent-mode-demo\app.py
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -13,6 +14,10 @@ def receive_data():
     data = request.get_json()
     # 可根據需求處理 data
     return "Received"
+
+@app.route('/Demo', methods=['GET'])
+def demo():
+    return "Hello Agent!"
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000)
