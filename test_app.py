@@ -12,6 +12,11 @@ def test_hello(client):
     assert rv.status_code == 200
     assert rv.data == b'Hello, World!'
 
+def test_demo(client):
+    rv = client.get('/Demo')
+    assert rv.status_code == 200
+    assert rv.data == b'Hello Agent!'
+
 def test_post_data(client):
     rv = client.post('/data', json={"key": "value"})
     assert rv.status_code == 200

@@ -6,6 +6,10 @@ app = Flask(__name__)
 def hello():
     return "Hello, World!"
 
+@app.route('/Demo', methods=['GET'])
+def demo():
+    return "Hello Agent!"
+
 @app.route('/data', methods=['POST'])
 def receive_data():
     if not request.is_json:
